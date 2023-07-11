@@ -115,3 +115,37 @@ export function userDetailed(id = 'someuserid', username = 'miskist', host = 'mi
 		url: null,
 	};
 }
+export function note(reactionAcceptance: 'likeOnly' | 'likeOnlyForRemote' | 'nonSensitiveOnly' | 'nonSensitiveOnlyForLocalLikeOnlyForRemote' | null, myReaction: string |undefined ): entities.Note {
+	return {
+		"id": "somenoteid",
+		"createdAt": "2023-07-07T04:45:30.682Z",
+		"userId": "someuserid",
+		"user": {
+				"id": "someuserid",
+				"name": "Misskey User",
+				"username": "miskist",
+				"host": 'misskey-hub.net',
+				"avatarUrl": "https://github.com/misskey-dev/misskey/blob/master/packages/frontend/assets/fedi.jpg?raw=true",
+				"avatarBlurhash": 'eQFRshof5NWBRi},juayfPju53WB?0ofs;s*a{ofjuay^SoMEJR%ay',
+				"isBot": false,
+				"isCat": false,
+				"emojis": [],
+				"onlineStatus": "online",
+		},
+		"text": "この文章はダミーです。",
+		"cw": null,
+		"visibility": "public",
+		"localOnly": false,
+		"reactionAcceptance": reactionAcceptance,
+		"myReaction": myReaction,
+		"renoteCount": 0,
+		"repliesCount": 0,
+		"reactions": {"❤️": 1},
+		"reactionEmojis": [],
+		"fileIds": [],
+		"files": [],
+		"replyId": '',
+		"renoteId": ''
+	};
+
+}
