@@ -400,7 +400,7 @@ function toStories(component: string): Promise<string> {
 		glob('src/components/Mk{A,B}*.vue'),
 		glob('src/components/MkDigitalClock.vue'),
 		glob('src/components/MkGalleryPostPreview.vue'),
-		glob('src/components/MkSignupServerRules.vue'),
+		glob('src/components/MkSignupDialog.rules.vue'),
 		glob('src/components/MkUserSetupDialog.vue'),
 		glob('src/components/MkUserSetupDialog.*.vue'),
 		glob('src/components/MkInviteCode.vue'),

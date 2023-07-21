@@ -3,14 +3,14 @@ import { expect } from '@storybook/jest';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { StoryObj } from '@storybook/vue3';
 import { onBeforeUnmount } from 'vue';
-import MkSignupServerRules from './MkSignupDialog.rules.vue';
+import MkSignupDialog_rules from './MkSignupDialog.rules.vue';
 import { i18n } from '@/i18n';
 import { instance } from '@/instance';
 export const Empty = {
 	render(args) {
 		return {
 			components: {
-				MkSignupServerRules,
+				MkSignupDialog_rules,
 			},
 			setup() {
 				return {
@@ -24,7 +24,7 @@ export const Empty = {
 					};
 				},
 			},
-			template: '<MkSignupServerRules v-bind="props" />',
+			template: '<MkSignupDialog_rules v-bind="props" />',
 		};
 	},
 	async play({ canvasElement }) {
@@ -67,7 +67,7 @@ export const Empty = {
 	parameters: {
 		layout: 'centered',
 	},
-} satisfies StoryObj<typeof MkSignupServerRules>;
+} satisfies StoryObj<typeof MkSignupDialog_rules>;
 export const ServerRulesOnly = {
 	...Empty,
 	args: {
@@ -76,14 +76,14 @@ export const ServerRulesOnly = {
 			'ルール',
 		],
 	},
-} satisfies StoryObj<typeof MkSignupServerRules>;
+} satisfies StoryObj<typeof MkSignupDialog_rules>;
 export const TOSOnly = {
 	...Empty,
 	args: {
 		...Empty.args,
 		tosUrl: 'https://example.com/tos',
 	},
-} satisfies StoryObj<typeof MkSignupServerRules>;
+} satisfies StoryObj<typeof MkSignupDialog_rules>;
 export const ServerRulesAndTOS = {
 	...Empty,
 	args: {
@@ -91,4 +91,4 @@ export const ServerRulesAndTOS = {
 		serverRules: ServerRulesOnly.args.serverRules,
 		tosUrl: TOSOnly.args.tosUrl,
 	},
-} satisfies StoryObj<typeof MkSignupServerRules>;
+} satisfies StoryObj<typeof MkSignupDialog_rules>;
