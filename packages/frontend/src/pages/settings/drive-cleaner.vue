@@ -19,7 +19,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 					@contextmenu.stop="$event => onContextMenu($event, file)"
 				>
 					<div :class="$style.file">
-						<div v-if="file.isSensitive" class="sensitive-label">{{ i18n.ts.sensitive }}</div>
+						<div v-if="file.isSensitive" :class="$style.sensitiveLabel">{{ i18n.ts.sensitive }}</div>
 						<MkDriveFileThumbnail :class="$style.fileThumbnail" :file="file" fit="contain"/>
 						<div :class="$style.fileBody">
 							<div style="margin-bottom: 4px;">
@@ -135,6 +135,19 @@ definePageMetadata(() => ({
 		color: var(--accent);
 	}
 }
+
+.sensitiveLabel {
+				position: absolute;
+				z-index: 10;
+				top: 77px;
+				padding: 2px 4px;
+				background: #ff0000bf;
+				color: #fff;
+				border-radius: 4px;
+				font-size: 85%;
+				animation: sensitive-blink 1s infinite;
+				opacity: 70%;
+			}
 
 .fileThumbnail {
 	width: 100px;
